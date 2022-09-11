@@ -1,0 +1,197 @@
+*{
+    padding:0;
+    margin:0;
+}
+/*font-family: poppins*/
+:root{
+    --red: hsl(0,78%,62%);
+    --cyan: hsl(180,62%,55%);
+    --orange: hsl(34,97%,64%);
+    --blue: hsl(212,86%,64%);
+    --very-dark-blue: hsl(234,12%,34%);
+    --grayish-blue: hsl(229,6%,66%);
+    --very-light-gray: hsl(0,0%,98%);
+}
+
+body{
+    font-size: 15px;
+    width: 1300px;
+    margin: 40px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*header*/
+header{
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: 40px;
+    position: relative;
+    animation-name:drop-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+@keyframes drop-in {
+    0%{top: -200px;}
+    100%{top: 0px;}
+}
+header h1{
+  font-weight: 400;
+}
+header h2{
+    font-weight: 600;
+}
+
+/*grid container*/
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.6em;
+    font-weight: 200;
+}
+
+/*grid item*/
+.grid-item{
+  background-color: var(--very-light-gray);
+  border: 1px solid var(--very-light-gray);
+  padding: 20px;
+  border-radius: 10px;
+  height: 230px;
+  line-height: 1.9em;
+}
+.grid-item:nth-child(1){
+  position: relative;
+  top: 100px;
+  box-shadow: 0px -4px 1px var(--cyan),
+              0px 4px 6px var(--blue);
+}
+.grid-item:nth-child(1) img{
+    position: relative;
+    top: 90px;
+    left: 310px;
+}
+.grid-item:nth-child(2){
+    box-shadow: 0px -4px 1px var(--red),
+              0px 4px 6px var(--blue);
+}
+.grid-item:nth-child(2) img{
+    position: relative;
+    top: 70px;
+    left: 310px;
+}
+.grid-item:nth-child(3){
+    position: relative;
+    top: 100px;
+    box-shadow: 0px -4px 1px var(--blue),
+              0px 4px 6px var(--blue);
+}
+.grid-item:nth-child(3) img{
+    position: relative;
+    top: 72px;
+    left: 310px;
+}
+.grid-item:nth-child(4){
+    box-shadow: 0px -4px 1px var(--orange),
+              0px 4px 6px var(--blue);
+    position: relative;
+    left: 439px;
+}
+.grid-item:nth-child(4) img{
+    position: relative;
+    top: 90px;
+    left: 310px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/*media queries*/
+@media (max-width: 375px){
+
+   body{
+      width:80%;
+      margin:20px auto;
+   }
+
+   .grid-container{
+     display: flex;
+     flex-direction: column;
+   }
+
+   .grid-item:nth-child(1){
+     position: relative;
+     top:0px; 
+     left:0px;
+     animation-name:from-left;
+     animation-duration: 2s;
+     animation-delay: 2s;
+     animation-fill-mode: forwards;
+   }
+   @keyframes from-left {
+     0%{left:-500px}
+     100%{left:0px}
+   }
+   .grid-item:nth-child(2){
+     position: relative;
+     top:0px;
+     left:0px;
+     animation-name: from-left--2;
+     animation-duration: 2s;
+     animation-delay: 2.3s;
+     animation-fill-mode: forwards;
+   }
+   @keyframes from-left--2 {
+    0%{opacity: 0.3;}
+    100%{opacity: 1;}
+   }
+   .grid-item:nth-child(3){
+     position: relative;
+     top:0px;
+     left:0px;
+     animation-name: from-left--3;
+     animation-duration: 2s;
+     animation-delay: 2.6s;
+     animation-fill-mode: forwards;
+   }
+   @keyframes from-left--3 {
+     0%{left:-500px}
+     100%{left:0px}
+   }
+   .grid-item:nth-child(4){
+     position: relative;
+     top:0px;
+     left:0px;
+     animation-name: from-left--4;
+     animation-duration: 2s;
+     animation-delay: 2.9s;
+     animation-fill-mode: forwards;
+   }
+   @keyframes from-left--4 {
+     0%{opacity: 0;}
+     100%{opacity: 1;}
+   }
+   .grid-item:nth-child(1) img{
+     position: relative;
+     top:70px;
+     left:140px;
+   }
+   .grid-item:nth-child(2) img{
+     position: relative;
+     top:40px;
+     left:140px;
+   }
+   .grid-item:nth-child(3) img{
+     position: relative;
+     top:40px;
+     left:140px;
+  }
+  .grid-item:nth-child(4) img{
+     position: relative;
+     top:70px;
+     left:140px;
+  }
+}
+
+/*// i added a bit of some animation in the media queries, just for the fun part //*/
